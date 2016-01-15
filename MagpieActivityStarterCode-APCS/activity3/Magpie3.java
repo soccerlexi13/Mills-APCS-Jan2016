@@ -7,8 +7,8 @@ package activity3;
  *    Uses advanced search for keywords 
  * </li></ul> 
  *    
- * @author Laurie White
- * @version April 2012
+ * @author Alexis Scheerer
+ * @version January 14, 2016
  */
 public class Magpie3
 {
@@ -34,7 +34,7 @@ public class Magpie3
 		String response = "";
 		if (statement.length() == 0)
 		{
-			response = "Say something, please.";
+			response = "SAY SOMETHING! ANYTHING!";
 		}
 		else if (findKeyword(statement, "no") >= 0)
 		{
@@ -47,6 +47,24 @@ public class Magpie3
 		{
 			response = "Tell me more about your family.";
 		}
+		else if(findKeyword(statement, "cat") >= 0 || findKeyword(statement, "dog") >= 0){
+            response="Tell me more about your pets.";
+        }
+        else if(findKeyword(statement, "ms. dreyer") >= 0){
+            response="Ms. Dreyer? I had her when I was in school! Don't you love that class?";
+        }
+        else if(findKeyword(statement, "mr. lamont") >= 0){
+            response="Mr. Lamont was always a great help!";
+        }
+        else if(findKeyword(statement, "joke") >= 0){
+            response="I have a really good joke! Donald Trump.";
+        }
+        else if(findKeyword(statement, "school") >= 0){
+            response="School is a horrid thing. I advise you not to look it in the eye.";
+        }
+        else if(findKeyword(statement, "iphone") >= 0){
+            response="I advise against the use of technology.";
+        }
 		else
 		{
 			response = getRandomResponse();
@@ -144,7 +162,7 @@ public class Magpie3
 	 */
 	private String getRandomResponse()
 	{
-		final int NUMBER_OF_RESPONSES = 4;
+		final int NUMBER_OF_RESPONSES = 6;
 		double r = Math.random();
 		int whichResponse = (int) (r * NUMBER_OF_RESPONSES);
 		String response = "";
@@ -165,6 +183,12 @@ public class Magpie3
 		{
 			response = "You don't say.";
 		}
+		else if (whichResponse == 4){
+            response = "Really?";
+        }
+        else if (whichResponse == 5){
+            response = "That's cool.";
+        }
 
 		return response;
 	}
