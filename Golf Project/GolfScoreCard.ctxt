@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=par\ score
+comment0.target=void\ addScore(int,\ int)
+comment1.params=par\ score
+comment1.target=java.lang.String\ holeOutcome(int,\ int)
+comment2.params=
+comment2.target=java.lang.String\ gameOutcome()
+numComments=3
