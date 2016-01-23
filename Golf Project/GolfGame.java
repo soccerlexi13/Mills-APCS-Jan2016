@@ -15,7 +15,9 @@ public class GolfGame
             System.out.println("Please enter the next round's par followed by score");
             int par=scoreGetter.nextInt();
             int score=scoreGetter.nextInt();
-            
+            player1.addScore(par, score);
+            System.out.println(player1.holeOutcome(par, score));
         }
+        System.out.println(player1.gameOutcome());
     }
 }
