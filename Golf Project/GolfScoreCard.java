@@ -1,4 +1,3 @@
-
 /**
  * Class defining object for Golf Project
  * 
@@ -8,13 +7,11 @@
 public class GolfScoreCard
 {
     int totalScore, totalPar;
-    public void addScore(int par, int score){
+    public String holeOutcome(int par, int score){ //finds result of current hole
         totalPar+=par;
-        totalScore+=score;
-    }
-    public String holeOutcome(int par, int score){
+        totalScore+=score; //add this round's score and par to the total
         int comparison=par-score;
-        if(comparison<0){
+        if(comparison<0){ //if negative, it will be over par
             if (comparison==-1){
                 return("bogey");
             }
@@ -22,10 +19,10 @@ public class GolfScoreCard
                 return("double bogey");
             }
             else{
-                return(comparison+" above par");
+                return(Math.abs(comparison)+" over par");
             }
         }
-        else if (comparison>0){
+        else if (comparison>0){ //if positive, it will be under par
             if(comparison==1){
                 return("birdie");
             }
@@ -36,11 +33,20 @@ public class GolfScoreCard
                 return(comparison+" below par");
             }
         }
-        else{
+        else{ //or else it is 0, so par
             return("par");
         }
     }
-    public String gameOutcome(){
-        return(holeOutcome(totalPar, totalScore));
+    public String gameOutcome(){ //returns final outcome of game
+        int gameDif=totalPar-totalScore;
+        if(gameDif>0){ //if positive, it will be under par
+            return(gameDif + " below par");
+        }
+        else if(gameDif<0){ //if negative, it will be over par
+            return(Math.abs(gameDif) + " over par");
+        }
+        else{ //or else it is 0, so par
+            return("par");
+        }
     }
 }
