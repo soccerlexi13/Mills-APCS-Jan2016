@@ -1,12 +1,12 @@
 #BlueJ class context
-comment0.params=username
-comment0.target=Player(java.lang.String)
+comment0.params=
+comment0.target=Player()
 comment1.params=
 comment1.target=java.lang.String\ toString()
-comment2.params=steps\ otherPlayer
-comment2.target=void\ moveSteps(int,\ Player)
-comment3.params=
-comment3.target=void\ toStart()
+comment2.params=gameRolls\ playerB
+comment2.target=void\ playGame(java.lang.String,\ Player)
+comment3.params=steps\ otherPlayer
+comment3.target=void\ moveSteps(int,\ Player)
 comment4.params=
-comment4.target=int\ getLocation()
+comment4.target=void\ toStart()
 numComments=5
